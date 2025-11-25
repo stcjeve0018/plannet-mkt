@@ -1,26 +1,24 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #4A77FF;
+  --secondary: #6CA6FF;
+  --accent: #FFB03A;
+  --background: #FFFFFF;
+  --foreground: #1E1E1E;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* 確保 Noto Sans TC 生效 (需在 layout 引入，或預設 fallback) */
+  font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden; /* 防止橫向卷軸，但保持縱向滾動正常 */
+}
+
+/* 讓滾動更平滑 */
+html {
+  scroll-behavior: smooth;
 }
